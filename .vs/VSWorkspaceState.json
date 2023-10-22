@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\P04WeatherForecastAPI.Client",
+    "\\P04WeatherForecastAPI.Client\\Models",
+    "\\P04WeatherForecastAPI.Client\\Services",
+    "\\P04WeatherForecastAPI.Client\\ViewModels"
+  ],
+  "SelectedNode": "\\P04WeatherForecastAPI.Client\\MainWindow.xaml.cs",
+  "PreviewInSolutionExplorer": false
+}

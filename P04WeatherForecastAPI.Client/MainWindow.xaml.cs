@@ -1,5 +1,6 @@
 ﻿using P04WeatherForecastAPI.Client.Models;
 using P04WeatherForecastAPI.Client.Services;
+using P04WeatherForecastAPI.Client.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,74 +18,23 @@ using System.Windows.Shapes;
 
 namespace P04WeatherForecastAPI.Client
 {
+    //MVVM
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        AccuWeatherService accuWeatherService;
-        public MainWindow()
+        private readonly MainViewModel _viewModel;
+        public MainWindow(MainViewModel viewModel)
         {
             InitializeComponent();
-            accuWeatherService = new AccuWeatherService();
+            _viewModel = viewModel;
+            DataContext = _viewModel;
+            //accuWeatherService = new AccuWeatherService();
         }
 
-        private async void btnSearch_Click(object sender, RoutedEventArgs e)
-        {
-            
-            City[] cities= await accuWeatherService.GetLocations(txtCity.Text);
+        
 
-            // standardowy sposób dodawania elementów
-            //lbData.Items.Clear();
-            //foreach (var c in cities)
-            //    lbData.Items.Add(c.LocalizedName);
-
-            // teraz musimy skorzystac z bindowania danych bo chcemy w naszej kontrolce przechowywac takze id miasta 
-            lbData.ItemsSource = cities;
-        }
-
-        private async void lbData_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var selectedCity= (City)lbData.SelectedItem;
-            if(selectedCity != null)
-            {
-                var weather = await accuWeatherService.GetCurrentConditions(selectedCity.Key);
-                lblCityName.Content = selectedCity.LocalizedName;
-                double tempValue = weather.Temperature.Metric.Value;
-                lblTemperatureValue.Content = Convert.ToString(tempValue);
-
-				var weatherYesterday = await accuWeatherService.GetHistoricalCurrentConditions24(selectedCity.Key);
-                double tempValueYesterday = weatherYesterday.Temperature.Metric.Value;
-                lblTemperatureValueYesterday.Content = Convert.ToString(tempValueYesterday);
-
-				var weather1Hour = await accuWeatherService.GetForecast1Hour(selectedCity.Key);
-                double tempValue1Hour = weather1Hour.Temperature.Value;
-                lblTemperatureValue1Hour.Content = Convert.ToString(tempValue1Hour);
-
-				var weatherTommorow = await accuWeatherService.GetForecastDaily(selectedCity.Key);
-                double tempTomMax = weatherTommorow.DailyForecasts[0].Temperature.Maximum.Value;
-				double tempTomMin = weatherTommorow.DailyForecasts[0].Temperature.Minimum.Value;
-                lblTemperatureValueTomMin.Content = Convert.ToString(tempTomMin);
-				lblTemperatureValueTomMax.Content = Convert.ToString(tempTomMax);
-
-				var indices = await accuWeatherService.GetIndicesDaily(selectedCity.Key);
-                string allergens = indices.Category;
-                lblIndicesAllergens.Content = allergens;
-
-				var weather5Days = await accuWeatherService.Get5DaysForecast(selectedCity.Key);
-				string[] precipitaions = new string[weather5Days.DailyForecasts.Length];
-                for (int i=0; i < weather5Days.DailyForecasts.Length; i++) {
-					if (weather5Days.DailyForecasts[i] != null) {
-						if (weather5Days.DailyForecasts[i].Day.HasPrecipitation) {
-							precipitaions[i] = Convert.ToString(i+1) + " - yes";
-						} else {
-							precipitaions[i] = Convert.ToString(i+1) + " - no";
-						}
-					}
-				}
-				
-                lb5DaysForecast.ItemsSource = precipitaions;
-            }
-        }
     }
 }

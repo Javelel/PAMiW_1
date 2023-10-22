@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P04WeatherForecastAPI.Client.Models
 {
-    internal class PollenAndAllergensForecast
+    public class PollenAndAllergensForecast
 	{
     	public string Name { get; set; }
     	public int ID { get; set; }

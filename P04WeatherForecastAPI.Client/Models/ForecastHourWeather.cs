@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P04WeatherForecastAPI.Client.Models
 {
-    internal class ForecastHourWeather
+    public class ForecastHourWeather
     {
         public DateTime DateTime { get; set; }
         public int EpochDateTime { get; set; }

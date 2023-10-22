@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P04WeatherForecastAPI.Client.Models
 {
-    internal class DayNightInfo
+    public class DayNightInfo
     {
         public int Icon { get; set; }
 		public string IconPhrase { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P04WeatherForecastAPI.Client.Models
 {
-    internal class DailyTemperature
+    public class DailyTemperature
     {
         public ForecastTemperature Minimum { get; set; }
         public ForecastTemperature Maximum { get; set; }
