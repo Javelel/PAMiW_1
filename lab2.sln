@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LAB_1", "LAB_1", "{3640EA8C-07CF-4790-B673-0593616C35B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04WeatherForecastAPI.Client", "LAB_1\P04WeatherForecastAPI.Client\P04WeatherForecastAPI.Client.csproj", "{6F17CED5-A498-4C73-B9F9-96B7A7B9999F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LAB_2", "LAB_2", "{BA0B2220-1635-4FBA-A1FA-72EA2F0AC54B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04WeatherForecastAPI.Client", "LAB_2\P04WeatherForecastAPI.Client\P04WeatherForecastAPI.Client.csproj", "{D0486A99-9E07-4948-9EF0-AB1811707B17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F17CED5-A498-4C73-B9F9-96B7A7B9999F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F17CED5-A498-4C73-B9F9-96B7A7B9999F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F17CED5-A498-4C73-B9F9-96B7A7B9999F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F17CED5-A498-4C73-B9F9-96B7A7B9999F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0486A99-9E07-4948-9EF0-AB1811707B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0486A99-9E07-4948-9EF0-AB1811707B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0486A99-9E07-4948-9EF0-AB1811707B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0486A99-9E07-4948-9EF0-AB1811707B17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F17CED5-A498-4C73-B9F9-96B7A7B9999F} = {3640EA8C-07CF-4790-B673-0593616C35B0}
+		{D0486A99-9E07-4948-9EF0-AB1811707B17} = {BA0B2220-1635-4FBA-A1FA-72EA2F0AC54B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC6852DA-2683-4EEF-8219-C21C1618F468}
+	EndGlobalSection
+EndGlobal

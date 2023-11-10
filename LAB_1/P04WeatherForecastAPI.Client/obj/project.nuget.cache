@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iHT9uwM9I4EuHjxlDKBSIoVpdyXNOotzTfxx7dtSuysLC8JzZUQua2joOWQhfum/34dZdShM93RV2+cO3IFJnA==",
+  "dgSpecHash": "m2VmplgPXO56wLSL9H12NI1JpfRzoQ8BkjNi+L5DEInQgD/4CHT1v3M0fUWYBC0Tc6LYn/LLo8CRJPspW/2R3A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\opjav\\Desktop\\na studia\\MWO\\P04WeatherForecastAPI.Client\\P04WeatherForecastAPI.Client.csproj",
+  "projectFilePath": "C:\\Users\\opjav\\Desktop\\na studia\\PAMiW\\lab2\\LAB_1\\P04WeatherForecastAPI.Client\\P04WeatherForecastAPI.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\opjav\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\opjav\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
