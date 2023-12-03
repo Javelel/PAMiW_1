@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="P12MAUI.Client.MainPage"
+             xmlns:viewmodel="clr-namespace:P04WeatherForecastAPI.Client.ViewModels"
+            BackgroundColor="Black" >
+     
+
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+<HorizontalStackLayout Spacing="4">
+
+            <Button   
+        Command="{Binding NewCommand}" 
+          Text="New Movie" >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="SteelBlue" />
+                
+                   
+                        <Setter Property="Padding" Value="10,5" />
+                        <Setter Property="FontSize" Value="14" />
+                        
+                    </Style>
+                </Button.Style>
+            </Button>
+
+			<Button
+                    Command="{Binding PreviousPageCommand}"
+                    Text="Previous page" TextColor="Black">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="White" />
+
+
+                            <Setter Property="Padding" Value="10,5" />
+                            <Setter Property="FontSize" Value="14" />
+
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button
+                    Command="{Binding NextPageCommand}"
+                    Text="Next page" TextColor="Black">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="White" />
+
+
+                            <Setter Property="Padding" Value="10,5" />
+                            <Setter Property="FontSize" Value="14" />
+
+                        </Style>
+                    </Button.Style>
+				</Button>
+				<Label Text=" Current Page: " VerticalTextAlignment="Center"></Label>
+                <Label Text="{Binding CurrentPage}" VerticalTextAlignment="Center"></Label>
+                <Label Text=" of " VerticalTextAlignment="Center"></Label>
+                <Label Text="{Binding MaxPage}" VerticalTextAlignment="Center"></Label>
+                <Label Text=" " VerticalTextAlignment="Center"></Label>
+            </HorizontalStackLayout>
+
+            <CollectionView  ItemsSource="{Binding PageMovies}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="DarkBlue" Padding="10" Margin="5">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MoviesViewModel}}, Path=ShowDetailsCommand }"
+                                CommandParameter="{Binding .}" ></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <!--Pierwszy wiersz-->
+                                <HorizontalStackLayout Grid.Row="0" >
+                                    <Label Text="{Binding Id}"  Margin="0,0,10,0"></Label>
+                                    <Label Text="{Binding Title}" FontSize="16"></Label>
+                                </HorizontalStackLayout>
+                                <!--Drugi wiersz-->
+                                <Label Grid.Row="1" Text="{Binding Year}"></Label>
+                                <!--Trzeci wiersz-->
+                                <HorizontalStackLayout Grid.Row="2" >
+
+
+
+
+                                    <Label Text="Director: "></Label>
+                                    <Label Text="{Binding Director}"></Label>
+
+
+                                    <Label Text="Rating: " />
+                                    <Label Text="{Binding Rating}" />
+
+
+
+
+                                </HorizontalStackLayout>
+                                <!--<Button Grid.Row="3" 
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ProductsViewModel}}, Path=ShowDetailsCommand }" 
+                                CommandParameter="{Binding .}"  Text="Edit" >
+
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="SteelBlue" />
+
+
+                                            <Setter Property="Padding" Value="10,5" />
+                                            <Setter Property="FontSize" Value="14" />
+
+                                        </Style>
+                                    </Button.Style>
+                                </Button>-->
+                            </Grid>
+                        </Frame>
+                           
+                        
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
